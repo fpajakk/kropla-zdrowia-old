@@ -1,0 +1,422 @@
+@import "core";
+
+.camps-title-container {
+  text-align: center;
+  margin-bottom: 5rem;
+
+  h3,
+  a {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: $yellow-4;
+    margin-top: -0.5rem;
+  }
+
+  a {
+    font-size: 1.25rem;
+  }
+}
+
+.camps-booking-info {
+  margin-bottom: 2rem;
+  h4 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
+
+  .camps-documents {
+    display: block;
+  }
+}
+
+// CAMPS NAV
+
+.camps-nav {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding-bottom: 7rem;
+  position: relative;
+
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  &-btn {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: transparent;
+    background: transparent;
+    border-radius: $radius;
+    outline: none;
+    font-family: $ff-primary;
+    color: $white;
+    display: block;
+    text-align: left;
+
+    &:hover {
+      .camps-nav-image {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &-image-container {
+    &::after {
+      @include image-gradient;
+      border-radius: $radius;
+    }
+  }
+
+  &-image {
+    transition: $transition;
+    border-radius: $radius;
+  }
+
+  &-info {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  &-name {
+    margin: 0;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  &-separator {
+    display: none;
+  }
+}
+
+// CAMPS SECTION
+
+.camp-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+
+  p {
+    text-transform: uppercase;
+  }
+}
+
+.camp-wave {
+  position: absolute;
+  bottom: -10px;
+  left: -10vw;
+  width: 100vw;
+
+  &-nav {
+    bottom: -5px;
+    z-index: 0;
+  }
+}
+
+.camp {
+  padding-top: 5rem;
+  text-align: center;
+  position: relative;
+
+  &:nth-child(odd) {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -10vw;
+      width: 100vw;
+      height: 100%;
+      z-index: 0;
+      background-color: $blue-3;
+    }
+
+    .camp-wave-dark {
+      display: none;
+    }
+  }
+
+  &:nth-child(even) {
+    .camp-wave-light {
+      display: none;
+    }
+  }
+
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  &-name {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $yellow-4;
+  }
+
+  &-separator {
+    width: 8rem;
+    margin-top: 1rem;
+  }
+
+  &-image {
+    height: 19rem;
+    border-radius: $radius;
+  }
+
+  &-description {
+    font-family: $ff-primary;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    align-self: center;
+  }
+
+  h3 {
+    margin: 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  &-info {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin: 3rem 0;
+  }
+
+  &-details {
+    margin: 3rem auto;
+
+    &-icon {
+      margin-right: 0.5rem;
+      position: relative;
+      top: 3px;
+      color: $yellow-4;
+    }
+  }
+
+  &-wrapper {
+    text-align: center;
+  }
+
+  &-availability {
+    p {
+      font-family: $ff-primary;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.green {
+  color: lightgreen;
+  margin-bottom: 0.5rem;
+}
+
+.red {
+  color: tomato;
+  margin-bottom: 0.5rem;
+}
+
+// Even no. of camps
+.camps-gallery-container {
+  // position: relative;
+  // padding-bottom: 10rem;
+  // margin-bottom: -10rem;
+
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: -10vw;
+  //   width: 100vw;
+  //   height: 100%;
+  //   z-index: 0;
+  //   background-color: $blue-3;
+  // }
+
+  .gallery-section-camps {
+    position: relative;
+    z-index: 1;
+
+    .section-title {
+      padding-top: 5rem;
+    }
+
+    .gallery {
+      margin-top: 5rem;
+
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 412px) {
+  .camps-nav-separator {
+    display: block;
+    width: 6rem;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .camps-nav {
+    grid-template-columns: repeat(3, 1fr);
+    padding-bottom: 10rem;
+
+    &-name {
+      line-height: 1.2;
+      font-size: 1.1rem;
+    }
+
+    &-separator {
+      margin: 0.5rem 0;
+    }
+  }
+
+  .camp-separator {
+    width: 10rem;
+  }
+
+  .camp-availability {
+    p {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .camps-title-container a {
+    font-size: 1.75rem;
+  }
+
+  .camps-nav {
+    padding-right: 10%;
+    padding-left: 10%;
+
+    &-btn {
+      &:nth-child(1) {
+        --sal-delay: 0.1s;
+      }
+
+      &:nth-child(2) {
+        --sal-delay: 0.2s;
+      }
+
+      &:nth-child(3) {
+        --sal-delay: 0.3s;
+      }
+      &:nth-child(4) {
+        --sal-delay: 0.4s;
+      }
+      &:nth-child(5) {
+        --sal-delay: 0.5s;
+      }
+      &:nth-child(6) {
+        --sal-delay: 0.6s;
+      }
+      &:nth-child(7) {
+        --sal-delay: 0.7s;
+      }
+      &:nth-child(8) {
+        --sal-delay: 0.8s;
+      }
+      &:nth-child(9) {
+        --sal-delay: 0.9s;
+      }
+    }
+
+    &-name {
+      font-size: 1.2rem;
+    }
+
+    &-separator {
+      width: 8rem;
+    }
+  }
+
+  .camp-wave,
+  .camp:nth-child(odd)::after,
+  .camps-gallery-container::after {
+    left: -5vw;
+  }
+
+  .camp-details {
+    width: 60vw;
+
+    &-icon {
+      top: 5px;
+    }
+  }
+
+  .camp-details-container {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .camp-wrapper {
+    text-align: right;
+  }
+
+  .camp-info {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .camp:nth-child(even) {
+    .camp-info {
+      grid-auto-flow: dense;
+      align-self: flex-end;
+
+      .camp-image {
+        grid-column: 2;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .camps-nav {
+    padding-bottom: 15rem;
+
+    &-name {
+      font-size: 1.4rem;
+    }
+  }
+
+  .camp-wave,
+  .camp:nth-child(odd)::after,
+  .camps-gallery-container::after {
+    left: -5vw;
+  }
+
+  .camp-details {
+    width: 45vw;
+    max-width: 700px;
+  }
+
+  // Even no. of camps
+  // .camps-gallery-container {
+  // padding-bottom: 15rem;
+  // margin-bottom: -15rem;
+  // }
+}
+
+// Dynamic position (1170px Camp width makes dynamic margin)
+@media screen and (min-width: 1287px) {
+  .camp-wave,
+  .camp:nth-child(odd)::after,
+  .camps-gallery-container::after {
+    left: calc((100vw - 1170px) / -2);
+  }
+}

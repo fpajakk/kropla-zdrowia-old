@@ -1,0 +1,195 @@
+@import "core";
+
+.about {
+  background-color: $blue-1;
+  padding-top: 3rem;
+
+  // 'Radio' Buttons
+  &-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-left: 20px; // 'correction' for jc: center
+    height: 60px;
+  }
+
+  &-btn {
+    background: transparent;
+    border-color: transparent;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0.3rem;
+    transition: $transition;
+    cursor: pointer;
+    line-height: 1;
+    font-weight: bold;
+    font-family: $ff-primary;
+    outline: none;
+    color: $white;
+    opacity: 0.3;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &-radio {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background-color: $white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: $transition;
+
+      &-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: rgba(0, 38, 108, 0.3);
+        transition: $transition;
+      }
+    }
+
+    &-active {
+      color: $yellow-4;
+      opacity: 1;
+
+      .about-btn-radio {
+        background-color: $yellow-4;
+
+        &-dot {
+          background-color: rgba(0, 38, 108, 1);
+        }
+      }
+    }
+  }
+
+  // Images & Description
+  &-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+
+    &-images {
+      position: relative;
+    }
+  }
+
+  &-image-container {
+    --sal-delay: 0.3s;
+  }
+
+  &-image {
+    opacity: 0.3;
+    z-index: 1;
+    transition: opacity 0.8s ease-in;
+    border-radius: $radius;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+
+    &-active {
+      opacity: 1;
+      z-index: 2;
+      position: relative !important;
+    }
+
+    &::after {
+      @include image-gradient;
+    }
+  }
+
+  // Link
+  &-spinning-btn {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  // Wave
+  &-wave {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100vw;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .about-btn {
+    margin: 0 0.5rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .about {
+    padding: 5rem 0;
+
+    &-btn {
+      margin: 0 1rem;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .about-info {
+    grid-template-columns: repeat(12, 1fr);
+    row-gap: 2rem;
+    grid-auto-rows: minmax(100px, auto);
+
+    &-images {
+      display: grid;
+      grid-column: 1 / 13;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 20px;
+    }
+  }
+
+  .about-image-container {
+    &:nth-child(1) {
+      --sal-delay: 0.3s;
+    }
+
+    &:nth-child(2) {
+      --sal-delay: 0.6s;
+    }
+
+    &:nth-child(3) {
+      --sal-delay: 0.9s;
+    }
+  }
+
+  .about-image {
+    position: relative !important;
+  }
+
+  .about-description-container {
+    display: grid;
+    grid-column: 1 / 13;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 20px;
+  }
+
+  .about-description-0 {
+    grid-column: 1 / 7;
+  }
+
+  .about-description-1 {
+    grid-column: 4 / 10;
+    text-align: center;
+  }
+
+  .about-description-2 {
+    grid-column: 7 / 13;
+    text-align: right;
+  }
+
+  .about-spinning-btn {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}

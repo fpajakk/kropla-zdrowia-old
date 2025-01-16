@@ -1,0 +1,203 @@
+@import "core";
+
+.services {
+  background-color: $blue-2;
+
+  &-title {
+    text-align: left;
+    margin-bottom: 5rem;
+  }
+
+  &-wave {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100vw;
+  }
+}
+
+.service {
+  margin-bottom: 5rem;
+  position: relative;
+
+  &-info {
+    background-color: $blue-4;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $white;
+    position: relative;
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+    height: 19rem;
+
+    &-separator {
+      width: 6rem;
+      margin: 0.1rem 0 0;
+    }
+  }
+
+  &-title {
+    white-space: nowrap;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.15rem;
+  }
+
+  &-description {
+    padding: 0.5rem 0;
+    z-index: 5;
+    line-height: 1rem;
+  }
+
+  &-img {
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+    height: 19rem;
+
+    &::after {
+      @include image-gradient;
+    }
+  }
+
+  &-spinning-btn {
+    position: absolute;
+    bottom: -3.5rem;
+    left: 75%;
+
+    svg text {
+      letter-spacing: 3px;
+    }
+  }
+}
+
+@media screen and (min-width: 412px) {
+  .service-info-separator {
+    margin: 0.5rem 0;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .service-description {
+    line-height: 1.25;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .service-info {
+    height: 22rem;
+    padding: 4rem;
+  }
+
+  .service-img {
+    height: 22rem;
+  }
+
+  .service-description {
+    line-height: 1.5;
+  }
+
+  .service-spinning-btn {
+    left: 80%;
+    bottom: -0.5rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .service {
+    top: -50px;
+    height: 45vw;
+
+    &-title {
+      font-size: 1.35rem;
+      margin-bottom: 0.5rem;
+    }
+
+    &-img {
+      height: 1rem;
+      width: 55%;
+      padding-top: 55%;
+      border-radius: 50%;
+      position: absolute !important;
+      z-index: 0;
+      border: 2px solid $white;
+    }
+
+    &-info {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 50%;
+      width: 40vw;
+      height: 40vw;
+      z-index: 5;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  .service:nth-of-type(odd) {
+    .service-info {
+      left: 10vw;
+      text-align: right;
+    }
+
+    .service-info-separator {
+      align-self: flex-end;
+    }
+
+    .service-img {
+      top: 0;
+      right: 0;
+    }
+
+    .service-spinning-btn {
+      left: 5%;
+      bottom: 80%;
+    }
+  }
+
+  .service:nth-of-type(even) {
+    .service-info {
+      right: 10vw;
+    }
+
+    .service-img {
+      top: 0;
+      left: 0;
+    }
+
+    .service-spinning-btn {
+      left: 75%;
+      bottom: 80%;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .service {
+    top: -100px;
+
+    &-title {
+      font-size: 1.7rem;
+    }
+
+    &-info-separator {
+      width: 8rem;
+      margin: 0.5rem 0;
+    }
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .services {
+    padding-bottom: 3rem;
+  }
+
+  .service-info {
+    bottom: 100px;
+    width: 33vw;
+    height: 33vw;
+  }
+}

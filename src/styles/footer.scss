@@ -1,0 +1,132 @@
+@import "core";
+
+.footer {
+  text-align: center;
+  background-color: $blue-5;
+
+  &-center {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+    position: relative;
+    padding-top: 50px;
+  }
+
+  &-info {
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+
+  &-copy {
+    margin: 0;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    p {
+      color: $white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: bold;
+
+      span {
+        color: $blue-1;
+        opacity: 1;
+      }
+
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+
+  &-logo {
+    width: 180px;
+    opacity: 0.8;
+  }
+
+  &-documents-nav {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      font-family: $ff-secondary;
+      color: $white;
+      transition: $transition;
+      padding-bottom: 0.3rem;
+
+      &:hover {
+        color: $blue-1;
+      }
+    }
+  }
+}
+
+.social-links.footer-links {
+  width: auto;
+  margin-top: 0;
+}
+
+.footer .social-link {
+  color: $white;
+  font-size: 2.5rem;
+  margin-right: 0.5rem;
+  opacity: 0.8;
+  transition: $transition;
+
+  &:hover {
+    color: $yellow-4;
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .footer-copy {
+    flex-direction: row;
+    p:nth-child(2) {
+      display: block;
+      padding: 0 0.2rem;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer-center {
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 0;
+  }
+
+  .footer-documents-nav {
+    margin: 0 auto;
+    width: 600px;
+    justify-content: space-between;
+    flex-direction: row;
+
+    a {
+      padding-bottom: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .footer-info {
+    font-size: 1rem;
+  }
+
+  .footer-logo {
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .footer-center {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .social-links.footer-links {
+    display: none;
+  }
+}

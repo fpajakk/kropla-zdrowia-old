@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&family=Poppins:wght@400;700&display=swap");
+
+@font-face {
+  font-family: "luckiest_guy";
+  src: url("../assets/fonts/LuckiestGuy-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$white: #ffffff;
+$grey-1: #f3f5f8;
+$grey-2: #a5aab1;
+$blue-1: #1a6aff;
+$blue-2: #004edf;
+$blue-3: #003aa6;
+$blue-4: #00266c;
+$blue-5: #001233;
+$yellow-1: #ffd500;
+$yellow-2: #fdca40;
+$yellow-3: #fdc500;
+$yellow-4: #ffb400;
+$ff-primary: "luckiest_guy";
+$ff-secondary: "Poppins", sans-serif;
+$ff-quotes: "Catamaran", sans-serif;
+$spacing: 0.1rem;
+$transition: all 0.3s ease;
+$radius: 20px;
+@mixin image-gradient {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 206, 255, 0) 50%, #00caff 100%);
+}
